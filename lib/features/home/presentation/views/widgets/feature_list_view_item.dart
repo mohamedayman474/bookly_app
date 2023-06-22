@@ -9,8 +9,6 @@ class FeatureListViewItem extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 2.7/4,
       child: Container(
-        width: 50,
-        height: 100,
         decoration: BoxDecoration(
           color: Colors.red,
           borderRadius: BorderRadius.circular(16),
