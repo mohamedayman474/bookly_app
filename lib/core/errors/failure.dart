@@ -1,17 +1,17 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-abstract class Failure{
+abstract class Failure {
   final String errMessage;
 
   Failure(this.errMessage);
 }
-class ServerFailure extends Failure{
+
+class ServerFailure extends Failure {
   ServerFailure(super.errMessage);
 
-  factory ServerFailure.fromDioException(DioException dioException){
-    switch(dioException.type){
-
+  factory ServerFailure.fromDioException(DioException dioException) {
+    switch (dioException.type) {
       case DioExceptionType.connectionTimeout:
         return ServerFailure('Connection timeout with ApiServer');
 
@@ -24,7 +24,8 @@ class ServerFailure extends Failure{
       case DioExceptionType.badCertificate:
         return ServerFailure('Bad certificate  with ApiServer');
       case DioExceptionType.badResponse:
-       return ServerFailure.fromResponse(dioException.response!.statusCode, dioException.response!.data);
+        return ServerFailure.fromResponse(
+            dioException.response!.statusCode, dioException.response!.data);
 
       case DioExceptionType.cancel:
         return ServerFailure('Request to ApiServer was canceled');
@@ -32,15 +33,15 @@ class ServerFailure extends Failure{
       case DioExceptionType.connectionError:
         return ServerFailure('Connection error with ApiServer');
       case DioExceptionType.unknown:
-        if(dioException.message!.contains('SocketException')){
+        if (dioException.message!.contains('SocketException')) {
           return ServerFailure('No internet connection');
         }
         return ServerFailure('Unexpected Error, Please try again!');
       default:
         return ServerFailure('Opps There was an Error, Please try again');
     }
-
   }
+
   factory ServerFailure.fromResponse(int? statusCode, dynamic response) {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
       return ServerFailure(response['error']['message']);
@@ -52,5 +53,4 @@ class ServerFailure extends Failure{
       return ServerFailure('Opps There was an Error, Please try again');
     }
   }
-
 }
