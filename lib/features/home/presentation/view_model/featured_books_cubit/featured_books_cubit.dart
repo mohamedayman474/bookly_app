@@ -1,4 +1,3 @@
-import 'package:bookly_app/core/errors/failure.dart';
 import 'package:bookly_app/features/home/data/repos/home_repo.dart';
 import 'package:bookly_app/features/home/presentation/view_model/featured_books_cubit/featured_books_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

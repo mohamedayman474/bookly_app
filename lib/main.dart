@@ -9,7 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'constants.dart';
 
 void main() {
-  setUpServiceLocator();
+  setupServiceLocator();
   runApp(const MyApp());
 }
 
@@ -20,8 +20,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context)=>FeaturedBooksCubit(
-            getIt.get<HomeRepoImpl>())),
+        BlocProvider(
+            create: (context)=>FeaturedBooksCubit(
+            getIt.get<HomeRepoImpl>())..fetchFeaturedBooks(),
+        ),
         BlocProvider(create: (context)=>NewestBooksCubit(
             getIt.get<HomeRepoImpl>())),
       ]
