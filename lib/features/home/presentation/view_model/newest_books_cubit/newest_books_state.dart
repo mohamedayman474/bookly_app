@@ -2,15 +2,18 @@ import 'package:equatable/equatable.dart';
 
 import '../../../data/models/book_model/book_model.dart';
 
-abstract class NewestBooksState extends Equatable{
+abstract class NewestBooksState extends Equatable {
   const NewestBooksState();
 
   @override
-  List<Object> get props =>[];
+  List<Object> get props => [];
 }
-class NewestBooksInitial extends NewestBooksState{}
-class NewestBooksLoading extends NewestBooksState{}
-class NewestBooksFailure extends NewestBooksState{
+
+class NewestBooksInitial extends NewestBooksState {}
+
+class NewestBooksLoading extends NewestBooksState {}
+
+class NewestBooksFailure extends NewestBooksState {
   final String errMessage;
 
   const NewestBooksFailure(this.errMessage);
