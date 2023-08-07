@@ -29,16 +29,10 @@ class ServerFailure extends Failure {
 
       case DioExceptionType.cancel:
         return ServerFailure('Request to ApiServer was canceled');
-
       case DioExceptionType.connectionError:
-        return ServerFailure('Connection error with ApiServer');
+        return ServerFailure('No internet connection');
       case DioExceptionType.unknown:
-        if (dioException.message!.contains('SocketException')) {
-          return ServerFailure('No internet connection');
-        }
-        return ServerFailure('Unexpected Error, Please try again!');
-      default:
-        return ServerFailure('Opps There was an Error, Please try again');
+        return ServerFailure(' There was an Error, Please try again');
     }
   }
 
@@ -48,9 +42,9 @@ class ServerFailure extends Failure {
     } else if (statusCode == 404) {
       return ServerFailure('Your request not found, Please try later!');
     } else if (statusCode == 500) {
-      return ServerFailure('Internal Server error, Please try later');
+      return ServerFailure('There is a problem with server, please try later');
     } else {
-      return ServerFailure('Opps There was an Error, Please try again');
+      return ServerFailure('There was an error , please try again');
     }
   }
 }

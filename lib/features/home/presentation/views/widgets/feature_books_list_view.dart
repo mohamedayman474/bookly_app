@@ -6,7 +6,6 @@ import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../../core/utils/app_router.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
