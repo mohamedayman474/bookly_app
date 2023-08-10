@@ -30,7 +30,7 @@ class SimilarBooksListView extends StatelessWidget {
                           GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: state.books[index]);
                           },
                         child: CustomBookImage(imageUrl:
-                        state.books[index].volumeInfo.imageLinks?.thumbnail ?? '',),
+                        state.books[index].image ?? '',),
                       ),
                     );
                   }),

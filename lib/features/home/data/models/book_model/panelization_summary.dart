@@ -1,6 +1,6 @@
-import 'package:equatable/equatable.dart';
 
-class PanelizationSummary extends Equatable {
+
+class PanelizationSummary {
   final bool? containsEpubBubbles;
   final bool? containsImageBubbles;
 
@@ -21,6 +21,4 @@ class PanelizationSummary extends Equatable {
         'containsImageBubbles': containsImageBubbles,
       };
 
-  @override
-  List<Object?> get props => [containsEpubBubbles, containsImageBubbles];
 }

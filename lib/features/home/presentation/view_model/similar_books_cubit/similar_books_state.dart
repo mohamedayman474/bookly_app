@@ -1,12 +1,8 @@
-import 'package:equatable/equatable.dart';
+import 'package:bookly_app/features/home/domain/Entity/book_entity.dart';
 
-import '../../../data/models/book_model/book_model.dart';
 
-class SimilarBooksState extends Equatable {
-  @override
-  // TODO: implement props
-  List<Object?> get props => [];
-}
+
+abstract class SimilarBooksState {}
 
 class SimilarBooksInitial extends SimilarBooksState {}
 
@@ -17,7 +13,7 @@ class SimilarBooksFailure extends SimilarBooksState {
 }
 
 class SimilarBooksSuccess extends SimilarBooksState {
-  final List<BookModel> books;
+  final List<BookEntity> books;
 
   SimilarBooksSuccess(this.books);
 }

@@ -1,11 +1,11 @@
-import 'package:equatable/equatable.dart';
+
 
 import 'image_links.dart';
 import 'industry_identifier.dart';
 import 'panelization_summary.dart';
 import 'reading_modes.dart';
 
-class VolumeInfo extends Equatable {
+class VolumeInfo {
   final String? title;
   final List<String>? authors;
   final String? publisher;
@@ -110,30 +110,6 @@ class VolumeInfo extends Equatable {
         'canonicalVolumeLink': canonicalVolumeLink,
       };
 
-  @override
-  List<Object?> get props {
-    return [
-      title,
-      authors,
-      publisher,
-      publishedDate,
-      description,
-      industryIdentifiers,
-      readingModes,
-      pageCount,
-      printType,
-      categories,
-      averageRating,
-      ratingsCount,
-      maturityRating,
-      allowAnonLogging,
-      contentVersion,
-      panelizationSummary,
-      imageLinks,
-      language,
-      previewLink,
-      infoLink,
-      canonicalVolumeLink,
-    ];
-  }
+
+
 }

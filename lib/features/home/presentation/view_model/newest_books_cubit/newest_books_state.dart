@@ -1,13 +1,9 @@
-import 'package:equatable/equatable.dart';
 
-import '../../../data/models/book_model/book_model.dart';
 
-abstract class NewestBooksState extends Equatable {
-  const NewestBooksState();
+import 'package:bookly_app/features/home/domain/Entity/book_entity.dart';
 
-  @override
-  List<Object> get props => [];
-}
+
+abstract class NewestBooksState  {}
 
 class NewestBooksInitial extends NewestBooksState {}
 
@@ -16,11 +12,11 @@ class NewestBooksLoading extends NewestBooksState {}
 class NewestBooksFailure extends NewestBooksState {
   final String errMessage;
 
-  const NewestBooksFailure(this.errMessage);
+   NewestBooksFailure(this.errMessage);
 }
 
 class NewestBooksSuccess extends NewestBooksState {
-  final List<BookModel> books;
+  final List<BookEntity> books;
 
-  const NewestBooksSuccess(this.books);
+   NewestBooksSuccess(this.books);
 }

@@ -1,22 +1,18 @@
-import 'package:equatable/equatable.dart';
 
-import '../../../data/models/book_model/book_model.dart';
 
-abstract class FeaturedBooksState extends Equatable{
-  const FeaturedBooksState();
+import 'package:bookly_app/features/home/domain/Entity/book_entity.dart';
 
-  @override
-  List<Object> get props =>[];
-}
+
+abstract class FeaturedBooksState {}
 class FeaturedBooksInitial extends FeaturedBooksState{}
 class FeaturedBooksLoading extends FeaturedBooksState{}
 class FeaturedBooksFailure extends FeaturedBooksState{
   final String errMessage;
 
-  const FeaturedBooksFailure(this.errMessage);
+   FeaturedBooksFailure(this.errMessage);
 }
 class FeaturedBooksSuccess extends FeaturedBooksState{
-  final List<BookModel> books;
+  final List<BookEntity> books;
 
-  const FeaturedBooksSuccess(this.books);
+  FeaturedBooksSuccess(this.books);
 }
