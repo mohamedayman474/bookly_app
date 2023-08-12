@@ -17,9 +17,13 @@ class BookEntity  {
   final num? rating;
   @HiveField(6)
   final int? ratingsCount;
+  @HiveField(7)
+  final String? categories;
+  @HiveField(8)
+  final String? previewLink;
 
   const BookEntity(
-      {required this.bookId, required this.image,required this.title,required this.authorName,required this.price,required this.rating,required this.ratingsCount});
+      {required this.previewLink,required this.categories,required this.bookId, required this.image,required this.title,required this.authorName,required this.price,required this.rating,required this.ratingsCount});
 
 
 }

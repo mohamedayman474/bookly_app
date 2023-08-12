@@ -1,54 +1,19 @@
 
+import 'package:bookly_app/features/search/presentation/views/widgets/search_bloc_builder.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/styles.dart';
-import 'custom_search_text_field.dart';
 
 class SearchViewBody extends StatelessWidget {
-  const SearchViewBody({super.key});
-
+  const SearchViewBody({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomSearchTextField(),
-          SizedBox(
-            height: 16,
-          ),
-          Text(
-            'Search Result',
-            style: Styles.textStyle18,
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Expanded(
-            child: SearchResultListView(),
-          ),
-        ],
-      ),
-    );
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color(0xff100e20),
+          title: const Text('Search book'),
+          centerTitle: true,
+        ),
+        body: const SearchBlocBuilder());
   }
 }
 
-class SearchResultListView extends StatelessWidget {
-  const SearchResultListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: EdgeInsets.zero,
-      itemCount: 10,
-      itemBuilder: (context, index) {
-        return const Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          // child: BookListViewItem(),
-          child: Text('data'),
-        );
-      },
-    );
-  }
-}
