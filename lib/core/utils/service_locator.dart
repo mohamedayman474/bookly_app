@@ -7,9 +7,7 @@ import 'package:bookly_app/features/search/data/data_Sources/search_remote_data_
 import 'package:bookly_app/features/search/data/repository/search_repo_impl.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-
 final getIt = GetIt.instance;
-
 void setupServiceLocator() {
   getIt.registerSingleton<ApiService>(ApiService(Dio()));
   getIt.registerSingleton<HomeRepoImpl>(HomeRepoImpl(

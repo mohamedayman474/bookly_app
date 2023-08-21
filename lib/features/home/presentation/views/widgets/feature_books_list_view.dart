@@ -55,6 +55,7 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: GestureDetector(
+
                 onTap: (){
                   GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: widget.books[index]);
                 },
