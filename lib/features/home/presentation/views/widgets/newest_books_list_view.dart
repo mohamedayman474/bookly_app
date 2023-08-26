@@ -1,5 +1,5 @@
 import 'package:bookly_app/features/home/presentation/view_model/newest_books_cubit/newest_books_cubit.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/book_list_view_item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/newest_books_list_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../domain/Entity/book_entity.dart';
@@ -43,13 +43,13 @@ class _NewestBooksListViewState extends State<NewestBooksListView> {
   Widget build(BuildContext context) {
     return ListView.builder(
       controller: _scrollController,
-        physics:  const NeverScrollableScrollPhysics(),
+
         padding: EdgeInsets.zero,
         itemCount: widget.books.length,
         itemBuilder: (context,index){
           return  Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
-            child: BookListViewItem(bookEntity: widget.books[index],),
+            child: NewestBooksListViewItem(bookEntity: widget.books[index],),
           );
         });
 

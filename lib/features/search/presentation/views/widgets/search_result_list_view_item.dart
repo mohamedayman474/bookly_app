@@ -1,5 +1,5 @@
 import 'package:bookly_app/features/home/domain/Entity/book_entity.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/book_list_view_item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/newest_books_list_view_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultListViewItem extends StatelessWidget {
@@ -10,7 +10,7 @@ class SearchResultListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 8,left: 8),
-      child: BookListViewItem(bookEntity: bookEntity),
+      child: NewestBooksListViewItem(bookEntity: bookEntity),
     );
   }
 }

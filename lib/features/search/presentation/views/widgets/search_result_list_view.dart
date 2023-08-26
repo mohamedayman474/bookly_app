@@ -9,7 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/styles.dart';
-import '../../../../home/presentation/views/widgets/book_list_view_item.dart';
+import '../../../../home/presentation/views/widgets/newest_books_list_view_item.dart';
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({Key? key}) : super(key: key);

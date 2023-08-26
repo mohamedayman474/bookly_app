@@ -10,8 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 
-class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({Key? key, required this.bookEntity}) : super(key: key);
+class NewestBooksListViewItem extends StatelessWidget {
+  const NewestBooksListViewItem({Key? key, required this.bookEntity}) : super(key: key);
   final BookEntity bookEntity;
 
   @override
@@ -21,7 +21,7 @@ class BookListViewItem extends StatelessWidget {
         GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: bookEntity);
       },
       child: SizedBox(
-        height: 125,
+        height: MediaQuery.of(context).size.height * 0.18,
         child: Row(
           children: [
          CustomBookImage(imageUrl: bookEntity.image ?? ''),
